@@ -1,0 +1,74 @@
+---
+layout: members-only
+title: Manage Profile
+permalink: /members-only/profile.html
+---
+<p class="small text-danger text-left mb-3"><span id="delete" name="delete" ><strong>Delete Account</strong></span></p>
+<div class="row">
+  <div class="col-md-7 offset-md-2">
+    <h2>Update Accout Information</h2>
+    <hr />
+
+    <h2 id="updated" class="text-success text-center mb-3 hide"><em>Unknown</em></h2>
+    <div class="form-group row">
+      <label for="photoURL" class="col-sm-3 col-form-label">Photo Url:</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="photoURL" placeholder="Add the url to a photo">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="fullName" class="col-sm-3 col-form-label">Full Name:</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="fullName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="email" class="col-sm-3 col-form-label">Email Address:</label>
+      <div class="col-sm-9">
+        <input type="email" class="form-control" id="email">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="phoneNumber" class="col-sm-3 col-form-label">Phone Number:</label>
+      <div class="col-sm-9">
+        <input type="tel" class="form-control" id="phoneNumber">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button id="updateAccount" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-7 offset-md-2">
+    <h2>Change Password</h2>
+    <hr />
+
+    <div class="form-group row">
+      <label for="currentPass" class="col-sm-3 col-form-label">Current Password:</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="currentPass">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="newPass" class="col-sm-3 col-form-label">New Password:</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="newPass">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button id="updatePass" class="btn btn-primary">Update Password</button>
+      </div>
+    </div>
+  </div>
+</div>

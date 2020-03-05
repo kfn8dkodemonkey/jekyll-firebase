@@ -1,0 +1,43 @@
+[debug] [2020-03-05T16:10:05.911Z] ----------------------------------------------------------------------
+[debug] [2020-03-05T16:10:05.917Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-03-05T16:10:05.917Z] CLI Version:   7.13.1
+[debug] [2020-03-05T16:10:05.917Z] Platform:      linux
+[debug] [2020-03-05T16:10:05.918Z] Node Version:  v13.8.0
+[debug] [2020-03-05T16:10:06.010Z] Time:          Thu Mar 05 2020 09:10:05 GMT-0700 (Mountain Standard Time)
+[debug] [2020-03-05T16:10:06.011Z] ----------------------------------------------------------------------
+[debug] [2020-03-05T16:10:06.011Z] 
+[debug] [2020-03-05T16:10:06.082Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-05T16:10:06.084Z] > authorizing via signed-in user
+[debug] [2020-03-05T16:10:06.085Z] [iam] checking project fir-auth-jekyll for permissions ["firebase.projects.get"]
+[debug] [2020-03-05T16:10:06.094Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-05T16:10:06.095Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-05T16:10:06.374Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-05T16:10:06.423Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-jekyll:testIamPermissions  
+
+[debug] [2020-03-05T16:10:06.592Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-05T16:10:06.598Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/fir-auth-jekyll  
+ 
+[debug] [2020-03-05T16:10:06.749Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/var/www/html/Jekyll/Firebase-Auth'...
+[info] 
+[debug] [2020-03-05T16:10:06.768Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/fir-auth-jekyll/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-03-05T16:10:07.150Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/var/www/html/Jekyll/Firebase-Auth/functions" for Cloud Functions...
+[debug] [2020-03-05T16:10:07.294Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T16:10:07.295Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-05T16:10:07.295Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T16:10:07.297Z] [worker-~diagnostic~-0742ae5a-9cdc-4cc4-a77a-ae9bb607a9a5]: Assigning socketPath: /tmp/fire_emu_5493.sock
+[debug] [2020-03-05T16:10:07.298Z] [worker-~diagnostic~-0742ae5a-9cdc-4cc4-a77a-ae9bb607a9a5]: BUSY
+[info] i  hosting: Serving hosting files from: _site
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-03-05T16:10:07.908Z] [runtime-status] [5493] Functions runtime initialized. {"cwd":"/var/www/html/Jekyll/Firebase-Auth/functions","node_version":"13.8.0"}
+[debug] [2020-03-05T16:10:07.910Z] [runtime-status] [5493] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T16:10:07.934Z] [runtime-status] [5493] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/var/www/html/Jekyll/Firebase-Auth/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-05T16:10:07.938Z] [runtime-status] [5493] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/var/www/html/Jekyll/Firebase-Auth/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-05T16:10:07.941Z] [runtime-status] [5493] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/var/www/html/Jekyll/Firebase-Auth/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-05T16:10:08.233Z] [worker-~diagnostic~-0742ae5a-9cdc-4cc4-a77a-ae9bb607a9a5]: IDLE

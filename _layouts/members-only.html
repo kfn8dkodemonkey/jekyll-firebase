@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include nav.html %}
+
+    <div class="container-fluid" id="main">
+      <h1>{{page.title}}</h1>
+
+      <div class="row mt-4">
+
+        <div class="col-md-7 offset-md-1">
+          {{content}}
+        </div>
+        <div class="col-md-3 offset-md-1">
+          <!-- Container where we'll display the user details -->
+          <img id="profilePhoto" src="#" class="img-fluid img-thumbnail" style="width: 50%;">
+          <div class="mt-3">
+            <!-- Firebase sign-in status: <span id="sign-in-status">Unknown</span><br /> -->
+            Display Name: <a id="emailAddress" href="#"><span id="displayName">Unknown</span></a><br />
+            Title: <span id="title">Unknown</span><br />
+            Agency: <span id="agency">Unknown</span><br />
+            Phone: <span id="phoneNumber">Unknown</span><br />
+            <!-- Email: <span id="emailAddress">Unknown</span><br /> -->
+          </div>
+
+          <!-- <hr />
+          <div>Firebase auth <code>currentUser</code> object value:</div>
+          <pre><code id="account-details">null</code></pre> -->
+
+          <hr />
+          <ul>
+            <li><a href="{{site.baseurl}}/members-only/profile.html">Manage Profile</a></li>
+            <li><a href="{{site.baseurl}}/members-only/Pending-Applications.html">View Pending Applications</a></li>
+            <li>Open Chat</li>
+          </ul>
+
+          <hr />
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

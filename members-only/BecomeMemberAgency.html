@@ -1,0 +1,365 @@
+---
+layout: page
+title: Become a Member Agency
+---
+<div class="shadow p-3 mb-5 p-5 bg-light text-datk rounded">
+  <p>Becoming a Member Agency will involve at a minimum, reviewing and signing:</p>
+
+  <ul>
+  	<li>The CISC Intergovernmental Agreement (IGA)</li>
+  	<li>A Joinder to the CISC/Numerica Regional Data Warehouse (RDW) Agreement</li>
+  	<li>A Memorandum of Understanding and addendum for NCIS/LInX</li>
+  	<li>All detailed information provided following submission of the application Form</li>
+  </ul>
+
+  <p>Still interested in becoming a CISC Member Agency?&nbsp; Please fill in and complete the information below.</p>
+
+  <hr />
+  	<p><span class="text-danger">*</span> indicates required</p>
+  	<!-- Acency Information Section -->
+
+  	<fieldset><legend>Agency Information</legend>
+      <div class="form-group row">
+  			<div class="col-3"><label>Membership Level:</label></div>
+
+  			<div class="col">
+  				<div class="custom-control custom-radio">
+            <input checked="checked" class="custom-control-input" id="Agency" name="membership" type="radio" value="New Colorado Agency Membership">
+            <label class="custom-control-label" for="Agency">New Colorado Agency Membership</label>
+          </div>
+
+  				<div class="custom-control custom-radio">
+            <input class="custom-control-input" id="Ex-Officio" name="membership" type="radio" value="Ex-Officio Membership">
+            <label class="custom-control-label" for="Ex-Officio">Ex-Officio Membership</label>
+          </div>
+
+  				<div class="custom-control custom-radio">
+            <input class="custom-control-input" id="Chapter" name="membership" type="radio" value="Chapter Membership">
+            <label class="custom-control-label" for="Chapter">Chapter Membership</label>
+          </div>
+  			</div>
+  		</div>
+
+  		<div class="form-group"><label for="AGENCY">Agency Name:<span class="text-danger">*</span></label>
+        <input aria-describedby="agendyhelp" class="form-control" id="agency" name="agency" placeholder="Agency Name" required="" type="text">
+        <small class="form-text text-muted" id="emailHelp">Enter the name of your agency.</small>
+      </div>
+
+  		<!-- Address Section -->
+  		<div class="form-group">
+        <label for="address-1">Address: </label>
+        <input class="form-control" id="address-1" maxlength="70" name="address-1" placeholder="1234 Main St" type="text">
+      </div>
+
+  		<div class="form-group">
+        <label for="address-2">Address Line 2</label>
+        <input class="form-control" id="address-2" maxlength="70" name="address-2" placeholder="Apartment, studio, or floor" type="text">
+      </div>
+
+  		<div class="form-row">
+  			<div class="form-group col-md-4">
+          <label for="city">City</label>
+          <input class="form-control" id="city" maxlength="40" name="city" type="text">
+        </div>
+
+  			<div class="form-group col-md-4">
+          <label for="state">State</label>
+          <input class="form-control" id="state" maxlength="20" name="state" type="text">
+        </div>
+
+  			<div class="form-group col-md-4">
+          <label for="zip">Zip Code</label>
+          <input class="form-control" id="zip" maxlength="10" name="zip" type="text">
+        </div>
+  		</div>
+  	</fieldset>
+    <!-- End Address Section -->
+    <hr />
+    <!-- APIC Section -->
+    <fieldset><legend>Agency Person In Charge</legend>
+
+  		<div class="form-row">
+  			<div class="form-group col-md-4">
+          <label for="APIC-First-Name">First Name: <span class="text-danger">*</span></label>
+          <input class="form-control" id="APIC-First-Name" name="APIC-First-Name" placeholder="First Name" required="" type="text">
+        </div>
+
+  			<div class="form-group col-md-2"><label for="APIC-MI">MI: </label>
+          <input class="form-control" id="APIC-MI" name="APIC-MI" placeholder="MI" type="text">
+        </div>
+
+  			<div class="form-group col-md-4">
+          <label for="APIC-Last-Name">Last Name: <span class="text-danger">*</span></label>
+          <input class="form-control" id="APIC-Last-Name" name="APIC-Last-Name" placeholder="Last Name" required="" type="text">
+        </div>
+
+  			<div class="form-group col-md-2">
+          <label for="APIC-RANK">Rank/Postion: </label>
+          <input class="form-control" id="APIC-Rank" name="APIC-RANK" placeholder="Chief, Sheriff, Director, etc.." type="text">
+        </div>
+  		</div>
+  	</fieldset>
+  	<!-- End APIC Section -->
+    <hr />
+    <!-- Contact Person Section -->
+  	<fieldset><legend>Preferred Contact</legend>
+
+  		<div class="form-row">
+  			<div class="form-group col-md-4">
+          <label for="PC-First-Name">First Name: <span class="text-danger">*</span></label>
+          <input class="form-control" id="PC-First-Name" name="PC-First-Name" placeholder="First Name" required="" type="text">
+        </div>
+
+  			<div class="form-group col-md-4">
+          <label for="PC-Last-Name">Last Name: <span class="text-danger">*</span> </label>
+          <input class="form-control" id="PC-Last-Name" name="PC-Last-Name" placeholder="Last Name" required="" type="text">
+        </div>
+
+  			<div class="form-group col-md-4">
+          <label for="PC-RANK">Rank/Position: </label>
+          <input class="form-control" id="PC-Rank" name="PC-RANK" placeholder="Rank/Postion Title" type="text">
+        </div>
+  		</div>
+
+  		<div class="form-row">
+  			<div class="form-group col-md-6">
+          <label for="PC-Business-Phone">Business Phone:*</label>
+
+  				<div class="phonefield phonefield-us">
+            (<span class="phonearea">
+              <input class="phonepart" id="PC-Business-Phone-area" maxlength="3" name="PC-Business-Phone[area]" pattern="[0-9]*" required="" size="3" type="text">
+            </span>)
+            <span class="phonedetail1">
+              <input class="phonepart " id="PC-Business-Phone-detail1" maxlength="3" name="PC-Business-Phone[detail1]" pattern="[0-9]*" required="" size="3" type="text">
+            </span> - <span class="phonedetail2"><input class="phonepart " id="PC-Business-Phone-detail2" maxlength="4" name="PC-Business-Phone[detail2]" pattern="[0-9]*" required="" size="4" type="text"></span>
+            <span class="small-meta nowrap">(###) ###-####</span>
+          </div>
+  			</div>
+
+  			<div class="form-grou col-md-6">
+          <label for="PC-Cell-Phone">Cell Phone:* </label>
+
+  				<div class="phonefield phonefield-us">(<span class="phonearea">
+            <input class="phonepart " id="PC-Cell-Phone-area" maxlength="3" name="PC-Cell-PhoneArea" pattern="[0-9]*" required="" size="3" type="text">
+          </span>)
+          <span class="phonedetail1">
+            <input class="phonepart " id="PC-Cell-Phone-detail1" maxlength="3" name="PC-Cell-PhoneDetail1" pattern="[0-9]*" required="" size="3" type="text">
+          </span> -
+          <span class="phonedetail2"><input class="phonepart " id="PC-Cell-Phone-detail2" maxlength="4" name="PC-Cell-PhoneDetail2" pattern="[0-9]*" required="" size="4" type="text"></span> <span class="small-meta nowrap">(###) ###-####</span>
+          </div>
+  			</div>
+  		</div>
+
+  		<div class="form-group">
+        <label for="PC-Email">Preferred Email: <span class="text-danger">*</span></label>
+        <input class="form-control" id="PC-Email" name="PC-Email" required="" type="email">
+      </div>
+  	</fieldset>
+  	<!-- End Contact Person Section -->
+    <hr />
+    <!-- Data Sources -->
+  	<fieldset>
+      <legend>Data Sources: (please list all that apply)</legend> <!-- list Data Source -->
+
+  		<div class="form-group row">
+        <label class="col-sm-4 col-form-label" for="RMS">Agency RMS Provider: </label>
+  			<div class="col-sm-8">
+          <input class="form-control" id="RMS" name="RMS" type="text">
+        </div>
+  		</div>
+
+  		<div class="form-group row">
+        <label class="col-sm-4 col-form-label" for="CAD">Agency CAD Provider: </label>
+  			<div class="col-sm-8">
+          <input class="form-control" id="CAD" name="CAD" type="text">
+        </div>
+  		</div>
+
+  		<div class="form-group row">
+        <label class="col-sm-4 col-form-label" for="LPR">Agency LPR Provider: </label>
+  			<div class="col-sm-8">
+          <input class="form-control" id="LPR" name="LPR" type="text">
+        </div>
+  		</div>
+
+  		<div class="form-group row">
+        <label class="col-sm-4 col-form-label" for="JMS">Agency JMS Provider: </label>
+  			<div class="col-sm-8">
+          <input class="form-control" id="JMS" name="JMS" type="text">
+        </div>
+  		</div>
+
+  		<div class="form-group row">
+        <label class="col-sm-4 col-form-label" for="OTHERDSP">Other Data Source Provider: </label>
+  			<div class="col-sm-8">
+          <input class="form-control" id="OTHERDSP" name="OTHERDSP" type="text">
+        </div>
+  		</div>
+  		<!-- End List Data Source -->
+      <!-- Share Data Source -->
+  		<div class="row">
+  			<div class="col-md-12">
+  				<p><strong>Which data sources does your agency wish to share with the CISC? </strong></p>
+  			</div>
+  		</div>
+  		<!-- Checkbox & Data Amount for RMS -->
+  		<div class="form-group row">
+  			<div class="form-group col-md-2">
+  				<div class="custom-control custom-checkbox">
+            <input class="custom-control-input mt-2" id="group[6927]-6927-0" name="group[6927][1]" type="checkbox" value="RMS">
+            <label class="custom-control-label mt-2" for="group[6927]-6927-0">RMS</label>
+          </div>
+  			</div>
+  			<label class="col-sm-5 col-form-label" for="RMSDATA">Current Amount of Data?</label>
+  			<div class="col-sm-5">
+          <input class="form-control" id="RMSDATA" name="RMSDATA" placeholder="RMS Data" type="text">
+        </div>
+  		</div>
+  		<!-- Checkbox & Data Amount for CAD -->
+  		<div class="form-group row">
+  			<div class="form-group col-md-2">
+  				<div class="custom-control custom-checkbox">
+            <input class="custom-control-input mt-2" id="group[6927]-6927-1" name="group[6927][2]" type="checkbox" value="CAD">
+            <label class="custom-control-label mt-2" for="group[6927]-6927-1">CAD</label>
+          </div>
+  			</div>
+  			<label class="col-sm-5 col-form-label" for="CADDATA">Current Amount of Data? </label>
+
+  			<div class="col-sm-5">
+          <input class="form-control" id="CADDATA" name="CADDATA" placeholder="CAD Data" type="text">
+        </div>
+  		</div>
+  		<!-- Checkbox & Data Amount for LPR -->
+  		<div class="form-group row">
+  			<div class="form-group col-md-2">
+  				<div class="custom-control custom-checkbox">
+            <input class="custom-control-input mt-2" id="group[6927]-6927-2" name="group[6927][4]" type="checkbox" value="LPR">
+            <label class="custom-control-label mt-2" for="group[6927]-6927-2">LPR</label>
+          </div>
+  			</div>
+  			<label class="col-sm-5 col-form-label" for="LPRDATA">Current Amount of Data? </label>
+  			<div class="col-sm-5">
+          <input class="form-control" id="LPRDATA" name="LPRDATA" placeholder="LPR Data" type="text">
+        </div>
+  		</div>
+  		<!-- Checkbox & Data Amount for JMS -->
+  		<div class="form-group row">
+  			<div class="form-group col-md-2">
+  				<div class="custom-control custom-checkbox">
+            <input class="custom-control-input mt-2" id="group[6927]-6927-3" name="group[6927][8]" type="checkbox" value="JMS">
+            <label class="custom-control-label mt-2" for="group[6927]-6927-3">JMS</label>
+          </div>
+  			</div>
+  			<label class="col-sm-5 col-form-label" for="JMSDATA">Current Amount of Data? </label>
+  			<div class="col-sm-5">
+          <input class="form-control" id="JMSDATA" name="JMSDATA" placeholder="JMS Data" type="text">
+        </div>
+  		</div>
+  		<!-- Checkbox & Data Amount for Other -->
+  		<div class="form-group row">
+  			<div class="form-group col-md-2">
+  				<div class="custom-control custom-checkbox">
+            <input class="custom-control-input mt-2" id="group[6927]-6927-4" name="group[6927][16]" type="checkbox" value="Other">
+            <label class="custom-control-label mt-2" for="group[6927]-6927-4">Other</label>
+          </div>
+  			</div>
+  			<label class="col-sm-5 col-form-label" for="OTHERDATA">Current Amount of Data? </label>
+  			<div class="col-sm-5">
+          <input class="form-control" id="OTHERDATA" name="OTHERDATA" placeholder="Other Data" type="text">
+        </div>
+  		</div>
+  		<!-- End Share Data Source -->
+    </fieldset>
+  	<!-- End Data Sources -->
+    <hr />
+    <!-- Certified Peace Officers -->
+  	<fieldset><legend>Peace Officers</legend>
+
+  		<div class="form-group">
+        <label for="FTE1">Total number of Certified Peace Officer (Ex-Officio User FTEs)? </label>
+        <input class="form-control" id="FTE1" name="FTE1" type="text">
+      </div>
+
+  		<div class="form-group"><label for="FTE2">Total number of Certified Peace Officer FTE serving in a Detention or Corrections assignment? </label>
+        <input class="form-control" id="FTE2" name="FTE2" type="text">
+      </div>
+
+  		<div class="form-group">
+        <label for="FTE3">Total number of non-certified peace officer FTE? </label>
+        <input class="form-control" id="FTE3" name="FTE3" type="text">
+      </div>
+
+  		<div class="form-group"><label for="POPSER">Estimated community population served (City, County, State, etc.)?</label>
+        <input class="form-control" id="POPSER" name="POPSER" type="text">
+      </div>
+  	</fieldset>
+  	<!-- End Certified Peace Officers -->
+    <hr />
+    <!-- Payment type and survey -->
+    <fieldset><legend>Additional Information:</legend>
+
+  		<div class="form-group row">
+        <div class="col-5 ml-2">
+          <p>How did you learn about the CISC? (Check all that apply):</p>
+  				<div class="form-check">
+            <input class="form-check-input" id="Internet" name="reference" type="checkbox" value="Internet">
+            <label class="form-check-label ml-2" for="Internet">Internet</label>
+          </div>
+
+  				<div class="form-check"><input class="form-check-input" id="CACP" name="reference" type="checkbox" value="CACP">
+            <label class="form-check-label ml-2" for="CACP">CACP</label>
+          </div>
+
+  				<div class="form-check disabled"><input class="form-check-input" id="CSOC" name="reference" type="checkbox" value="CSOC">
+            <label class="form-check-label ml-2" for="CSOC">CSOC</label>
+          </div>
+
+  				<div class="form-check disabled"><input class="form-check-input" id="Conference" name="reference" type="checkbox" value="Conference">
+            <label class="form-check-label ml-2" for="Conference">Conference</label>
+          </div>
+
+  				<div class="form-check disabled"><input class="form-check-input" id="CISC Website" name="reference" type="checkbox" value="CISC Website">
+            <label class="form-check-label ml-2" for="CISC Website">CISC Website</label>
+          </div>
+
+  				<div class="form-check disabled"><input class="form-check-input" id="Other" name="reference" type="checkbox" value="Other">
+            <label class="form-check-label ml-2" for="Other">Other</label>
+          </div>
+  			</div>
+  			<div class="col-3 ml-2">
+          <p>Prefered Method of Payment?</p>
+  				<div class="custom-control custom-radio">
+            <input checked="checked" class="custom-control-input" id="cc" name="PMOP" type="radio" value="Credit Card">
+            <label class="custom-control-label" for="cc">Credit Card</label>
+          </div>
+
+  				<div class="custom-control custom-radio">
+            <input class="custom-control-input" id="check" name="PMOP" type="radio" value="Check">
+            <label class="custom-control-label" for="check">Check</label>
+          </div>
+
+  				<div class="custom-control custom-radio">
+            <input class="custom-control-input" id="dd" name="PMOP" type="radio" value="Direct Deposit">
+            <label class="custom-control-label" for="dd">Direct Deposit</label>
+          </div>
+
+  				<div class="custom-control custom-radio">
+            <input class="custom-control-input" id="oppm" name="PMOP" type="radio" value="Other">
+            <label class="custom-control-label" for="oppm">Other</label>
+          </div>
+  			</div>
+  		</div>
+
+  		<!-- End Payment Type and survey --> <!-- MESSAGE -->
+
+  		<div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="MESSAGE">Reasons for application:</label>
+  			<div class="col-sm-7">
+          <textarea class="form-control" cols="6" id="MESSAGE" name="MESSAGE" rows="6"></textarea>
+        </div>
+  		</div>
+  		<!-- End MESSAGE -->
+    </fieldset>
+  	<!-- End Additional info -->
+    <button id="memeberAgencyRequest" class="btn btn-primary">Apply</button>
+</div>

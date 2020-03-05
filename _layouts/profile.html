@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include nav.html %}
+
+    <div class="container-fluid" id="main">
+      <h1>{{page.title}}</h1>
+
+      <div class="row mt-4">
+        <div class="col-md-7 offset-md-3 mb-5">
+          {{content}}
+        </div>
+        <div class="col-md-2">
+          <!-- empty space for whatever later -->
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
