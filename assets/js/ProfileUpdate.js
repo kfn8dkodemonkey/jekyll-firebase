@@ -146,18 +146,27 @@ function memeberAgencyRequest(){
 }
 
 // view pending application
-function viewPending(){
+function viewApplications(){
+  var filter = document.getElementById("filter").value;;
   var db = firebase.firestore();
-  var tbl = "<tr><th>Agency</th><th>Membership</th><th>Applicant Name</th><th>View</th></tr>";
+  var tbl = "<tr><th>Agency</th><th>Membership</th><th>Applicant Name</th><th>Status</th><th>View</th></tr>";
+
+  //alert(filter);
+
+  if(filter == "All"){
+    query = db.collection("members");
+  }else{
+    query = db.collection("members").where("status", "==", filter);
+  }
 
   // list pending applications
-  db.collection("members").where("status", "==", "pending")
-  .get()
-  .then(function(querySnapshot) {
+  query.get().then(function(querySnapshot) {
+      document.getElementById('record').innerHTML = "<h2>There are no " + filter + " applications.</h2>";
       querySnapshot.forEach(function(doc){
         // output to table
         const record = doc.data();
         const docId = doc.id;
+        const status = record.status;
         const agency = record.memberAgency;
         const membership = record.membership;
         const displayName = record.firstName + " " + record.lastName;
@@ -165,7 +174,7 @@ function viewPending(){
         tbl += "<tr><td>" + agency + "</td>";
         tbl += "<td>" + membership + "</td>";
         tbl += "<td>" + displayName + "</td>";
-        //tbl += "<td><input type='radio' value='" + docId + "' name='status'></td>";
+        tbl += "<td>" + status + "</td>";
         tbl += "<td><a href='/members-only/view-application.html?id="+ docId +"' class='btn btn-primary'>View Record</a></td>";
 
         document.getElementById('record').innerHTML = tbl;
@@ -328,19 +337,17 @@ function updateStatus(){
   var db = firebase.firestore();
   var status = document.getElementById("appID").value;
 
-
   //alert(status);
   db.collection("members").doc(status).update({
     status: "Approved"
 
     //call createMember
-    createMember(status);
+    //createMember(status);
 
   }).then(function() {
     window.location="/members-only/Pending-Applications.html";
     console.log("Document successfully updated!");
-  })
-  .catch(function(error) {
+  }).catch(function(error) {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
   });
@@ -360,9 +367,7 @@ function createMember(id){
       //var errorMessage = error.message;
       // ...
     });
-
-  }
-
+  });
 }
 
 // Update Profile

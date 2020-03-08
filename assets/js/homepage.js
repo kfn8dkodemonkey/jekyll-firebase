@@ -55,9 +55,9 @@ function initApp() {
 
               // [END_EXCLUDE]
               break;
-            case 'Pending Applications':
+            case 'View Applications':
               // Listen to collection changes
-              var db = firebase.firestore();
+              /*var db = firebase.firestore();
               db.collection("members").where("status", "==", "pending")
                 .onSnapshot(function(querySnapshot) {
                     var members = [];
@@ -70,8 +70,9 @@ function initApp() {
                       document.getElementById('noPending').classList.add('hide');
                     }
                     console.log("Current members in pending: ", members.join(", "));
-                    viewRecord();
-                  });
+                    //viewPending();
+                  });*/
+                  viewApplications();
               break;
             case 'View Application':
               const queryString = window.location.search;
