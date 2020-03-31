@@ -55,24 +55,9 @@ function initApp() {
 
               // [END_EXCLUDE]
               break;
-            case 'View Applications':
+            case 'List Applications':
               // Listen to collection changes
-              /*var db = firebase.firestore();
-              db.collection("members").where("status", "==", "pending")
-                .onSnapshot(function(querySnapshot) {
-                    var members = [];
-                    querySnapshot.forEach(function(doc) {
-                      members.push(doc.data().status);
-                    });
-                    if(members.join(",") === ""){
-                      document.getElementById('noPending').classList.remove('hide');
-                    }else{
-                      document.getElementById('noPending').classList.add('hide');
-                    }
-                    console.log("Current members in pending: ", members.join(", "));
-                    //viewPending();
-                  });*/
-                  viewApplications();
+              viewApplications();
               break;
             case 'View Application':
               const queryString = window.location.search;
@@ -104,10 +89,11 @@ function initApp() {
       document.getElementById('updateAccount').addEventListener('click', updateAccount, false);
       break;
     case 'Become a Member Agency':
-      document.getElementById('memeberAgencyRequest').addEventListener('click', memeberAgencyRequest, false);
+      document.getElementById('BMA').addEventListener('submit', memeberAgencyRequest);
       break;
     case 'View Application':
-      document.getElementById('approve').addEventListener('click', updateStatus, false);
+      document.getElementById('approve').addEventListener('click', updateStatus.bind(this,'approved'), false);
+      document.getElementById('decline').addEventListener('click', updateStatus.bind(this,'declined'), false);
       document.getElementById('delete').addEventListener('click', deleteApplication, false);
       break;
     default:

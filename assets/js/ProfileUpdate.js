@@ -145,13 +145,11 @@ function memeberAgencyRequest(){
   });
 }
 
-// view pending application
+// view all application
 function viewApplications(){
   var filter = document.getElementById("filter").value;;
   var db = firebase.firestore();
   var tbl = "<tr><th>Agency</th><th>Membership</th><th>Applicant Name</th><th>Status</th><th>View</th></tr>";
-
-  //alert(filter);
 
   if(filter == "All"){
     query = db.collection("members");
@@ -191,8 +189,20 @@ function viewRecord(value){
   // list pending applications
   db.collection("members").doc(value).get().then(function(doc) {
     if (doc.exists) {
+      //alert(doc.data().status);
 
-      output = "<input type='hidden' id='appID' value='" + value + "'>";
+      if (doc.data().status == "Approved"){
+        document.getElementById('approve').classList.add('hide');
+        document.getElementById('decline').classList.add('hide');
+        document.getElementById('delete').classList.remove('hide');
+      }else{
+        document.getElementById('approve').classList.remove('hide');
+        document.getElementById('decline').classList.remove('hide');
+        document.getElementById('delete').classList.add('hide');
+      }
+
+      output = "<p class='text-primary'><em><strong>" + doc.data().status + "</strong></em></p><hr />";
+      output += "<input type='hidden' id='appID' value='" + value + "'>";
       output += "<h2 class='text-center'>" + doc.data().memberAgency + "</h2>";
       output += "<p class='text-center'>" + doc.data().address + "<br />";
       output += doc.data().city +", " + doc.data().state + "," + doc.data().zipCode + "</p>";
@@ -322,7 +332,7 @@ function viewRecord(value){
 
 
       document.getElementById('record').innerHTML = output;
-      console.log("Document data:", doc.data());
+      //console.log("Document data:", doc.data());
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -333,40 +343,77 @@ function viewRecord(value){
 }
 
 // Update status of an application
-function updateStatus(){
+function updateStatus(btn){
   var db = firebase.firestore();
-  var status = document.getElementById("appID").value;
+  var appID = document.getElementById("appID").value;
 
-  //alert(status);
-  db.collection("members").doc(status).update({
-    status: "Approved"
+  // set the status update based on the button clicked.
+  if(btn == "approved"){
+    var update = "Approved";
+  }else if(btn == "declined") {
+    var update = "Declined";
+  }
 
-    //call createMember
-    //createMember(status);
-
-  }).then(function() {
-    window.location="/members-only/Pending-Applications.html";
-    console.log("Document successfully updated!");
+  // update recored in db
+  db.collection("members").doc(appID).update({
+    status: update
   }).catch(function(error) {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
   });
+
+  if(update == "Approved"){
+    createUser(appID);
+  }
+  window.location="/members-only/List-Applications.html";
 }
 
-// Create Members
-function createMember(id){
+// Create User
+function createUser(id){
+  //alert("Record ID: " + id);
+
   var db = firebase.firestore();
+  var recordRef = db.collection("members").doc(id);
 
-  db.collection("members").doc(id).get().then(function(doc) {
-    var email = doc.email;
-    var password = Math.random().toString(36).slice(2)
+  // get application data to create user account
+  recordRef.get().then(function(doc){
+    if (doc.exists) {
+      var appID = id;
+      var record = doc.data()
+      var email = record.email;
+      var displayName = record.firstName + " " + record.lastName;
+      var title = record.contactRank;
+      var agency= record.memberAgency;
+      var phone = record.businessPhone;
+      var password = Math.random().toString(36).slice(2)
+    }else {
+      // doc.data() will be undefined
+      console.log("No such Document");
+    }
+  }).catch(function(error){
+    console.log("Error getting document:", error);
+  });
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Errors here.
-      //var errorCode = error.code;
-      //var errorMessage = error.message;
-      // ...
-    });
+  // create user with data returned
+  // Initialize the default app
+  const admin = require('firebase-admin');
+  const serviceAccount = require('./ServiceAccountKey.json')
+  admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount)
+  });
+
+  admin.auth().createUser({
+    email: email,
+    emailVerified: false,
+    phoneNumber: phone,
+    password: password,
+    displayName: displayName,
+    disabled: false
+  }).then(function(userRecord) {
+    // See the UserRecord reference doc for the contents of userRecord.
+    console.log('Successfully created new user:', userRecord.uid);
+  }).catch(function(error) {
+    console.log('Error creating new user:', error);
   });
 }
 
@@ -407,7 +454,7 @@ function deleteApplication(){
   var status = document.getElementById("appID").value;
 
   db.collection("members").doc(status).delete().then(function() {
-    window.location="/members-only/Pending-Applications.html";
+    window.location="/members-only/List-Applications.html";
     console.log("Document successfully deleted!");
   }).catch(function(error) {
     console.error("Error removing document: ", error);

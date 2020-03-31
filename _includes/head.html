@@ -23,32 +23,18 @@
   <!-- Custom styles for this template -->
   <link href="{{site.baseurl}}/assets/css/main.css" rel="stylesheet">
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.10.0/firebase-app.js"></script>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-storage.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/7.10.0/firebase-analytics.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDz8zoSRPpNyNBIYwnu-PXfSFIiHxRU0Uc",
-      authDomain: "fir-auth-jekyll.firebaseapp.com",
-      databaseURL: "https://fir-auth-jekyll.firebaseio.com",
-      projectId: "fir-auth-jekyll",
-      storageBucket: "fir-auth-jekyll.appspot.com",
-      messagingSenderId: "71440192564",
-      appId: "1:71440192564:web:affc88acedf618a145a661",
-      measurementId: "G-L32BSJSHD2"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.10.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.10.0/firebase-firestore.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
 
   <!-- custome js for functions -->
   <script src="{{site.baseurl}}/assets/js/homepage.js"></script>
