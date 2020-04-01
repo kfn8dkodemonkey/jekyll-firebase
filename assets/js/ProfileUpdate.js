@@ -365,6 +365,7 @@ function updateStatus(btn){
   if(update == "Approved"){
     createUser(appID);
   }
+  // redirect back to the Application list
   window.location="/members-only/List-Applications.html";
 }
 
@@ -396,11 +397,8 @@ function createUser(id){
 
   // create user with data returned
   // Initialize the default app
-  const admin = require('firebase-admin');
-  const serviceAccount = require('./ServiceAccountKey.json')
-  admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount)
-  });
+  //var admin = require('firebase-admin')
+  //var app = admin.initializeApp();
 
   admin.auth().createUser({
     email: email,
